@@ -3,672 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natanael Edward Agung - Backend & Cloud Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Devicon for skill icons -->
+    <title>Natanael Edward Agung · Software Engineer (Full-Stack &amp; Cloud)</title>
+    <meta name="description" content="Portfolio of Natanael Edward Agung, software engineer (full-stack and cloud) based in Yogyakarta, Indonesia. Web applications from FastAPI and Laravel backends to React frontends on Google Cloud.">
+    <script>
+        // Resolve the theme before the stylesheet loads so there is no flash.
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('ne-theme'); } catch (e) { /* storage unavailable */ }
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = (stored === 'light' || stored === 'dark') ? stored : (prefersDark ? 'dark' : 'light');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="background-animation">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">Natanael</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link"><span class="nav-number">01.</span> Home</a></li>
-                <li><a href="#about" class="nav-link"><span class="nav-number">02.</span> About</a></li>
-                <li><a href="#experience" class="nav-link"><span class="nav-number">03.</span> Experience</a></li>
-                <li><a href="#projects" class="nav-link"><span class="nav-number">04.</span> Projects</a></li>
-                <li><a href="#skills" class="nav-link"><span class="nav-number">05.</span> Skills</a></li>
-                <li><a href="#contact" class="nav-link"><span class="nav-number">06.</span> Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="site-header">
+        <div class="container header-row">
+            <a href="#hero" class="wordmark">Natanael Edward</a>
+            <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 17a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1zM4.2 4.2a1 1 0 0 1 1.4 0l1.5 1.4A1 1 0 1 1 5.7 7L4.2 5.6a1 1 0 0 1 0-1.4zm12.6 12.6a1 1 0 0 1 1.4 0l1.5 1.4a1 1 0 1 1-1.4 1.4l-1.5-1.4a1 1 0 0 1 0-1.4zM19.8 4.2a1 1 0 0 1 0 1.4L18.4 7a1 1 0 1 1-1.4-1.4l1.4-1.4a1 1 0 0 1 1.4 0zM7.2 16.8a1 1 0 0 1 0 1.4l-1.5 1.4a1 1 0 1 1-1.4-1.4l1.4-1.4a1 1 0 0 1 1.5 0zM2 12a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm17 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1z"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.3 2a.7.7 0 0 1 .7.86 8.2 8.2 0 0 0 9.1 9.92.7.7 0 0 1 .8.92A10.3 10.3 0 1 1 11.3 2.1a.7.7 0 0 1 1-.1z"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-greeting">Hi, my name is</p>
-                <h1 class="hero-name">Natanael Edward Agung</h1>
-                <h2 class="hero-title">Backend & Cloud Computing Developer</h2>
-                <p class="hero-description">
-                    Fresh graduate from Informatics passionate about building scalable backend systems and 
-                    cloud solutions. Experienced with <span class="highlight">Laravel</span>, 
-                    <span class="highlight">Django</span>, and <span class="highlight">Google Cloud Platform</span>.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="Resume-Natanael Edward Agung.pdf" class="btn btn-secondary" download>Download CV</a>
+    <main id="main">
+
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-kicker">Software engineer based in Yogyakarta, Indonesia</p>
+                    <h1 class="hero-name">Natanael Edward Agung</h1>
+                    <p class="hero-role">Software Engineer (Full-Stack &amp; Cloud)</p>
+                    <p class="hero-lede">
+                        I build web applications end to end: FastAPI, Laravel, and Django backends,
+                        React frontends, and the Google Cloud infrastructure they run on.
+                        Informatics graduate, currently shipping
+                        <a class="inline-link" href="https://bibletypeid.site">Bible Typing Indonesia</a>.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">See the projects</a>
+                        <a href="Resume-Natanael Edward Agung.pdf" class="btn btn-ghost" download>Download CV (PDF)</a>
+                    </div>
+                    <ul class="hero-links">
+                        <li>
+                            <a href="https://github.com/NatanaelEdward" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.84 9.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/natanaeledward" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98zM3 9.75h4v11.75H3V9.75zm6.5 0h3.83v1.6h.05a4.2 4.2 0 0 1 3.78-2.07c4.04 0 4.79 2.66 4.79 6.12v6.1h-4v-5.41c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.86v5.5h-4V9.75z"/></svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:natanaeledward22@gmail.com">
+                                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                natanaeledward22@gmail.com
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="hero-social">
-                    <a href="https://github.com/NatanaelEdward" target="_blank" class="social-icon">
-                        <i class="devicon-github-original"></i>
+                <figure class="hero-photo">
+                    <img src="images/profile-small.jpg" width="652" height="700" fetchpriority="high" alt="Portrait of Natanael Edward Agung">
+                </figure>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-grid">
+                    <div class="about-prose">
+                        <p>
+                            I'm Natanael Edward Agung, an Informatics graduate from Immanuel Christian
+                            University with a GPA of 3.72 out of 4.00. My path into software started
+                            with curiosity about how systems work behind the scenes, and it led me to
+                            backend development first, then full-stack work across the whole stack.
+                        </p>
+                        <p>
+                            In <strong>Bangkit Academy 2024</strong>, the program by Google, GoTo, and
+                            Traveloka, I trained on the cloud computing track and built a habit of
+                            designing, deploying, and maintaining services on Google Cloud Platform.
+                        </p>
+                        <p>
+                            Along the way I have been a <strong>Programming Study Club mentor</strong>
+                            teaching Python to 30-plus students, an assistant lecturer for English
+                            Informatics, and a first-place winner in the Cre A Science 8.0 programming
+                            competition.
+                        </p>
+                        <p>
+                            Off the keyboard I explore new technologies, contribute to open-source
+                            projects, and help other developers grow.
+                        </p>
+                    </div>
+                    <aside class="about-facts" aria-label="Facts at a glance">
+                        <h3>At a glance</h3>
+                        <dl>
+                            <div class="fact">
+                                <dt>GPA</dt>
+                                <dd>3.72 / 4.00, Informatics, Immanuel Christian University</dd>
+                            </div>
+                            <div class="fact">
+                                <dt>Bangkit Academy 2024</dt>
+                                <dd>Cloud computing cohort by Google, GoTo, and Traveloka</dd>
+                            </div>
+                            <div class="fact">
+                                <dt>1st place</dt>
+                                <dd>Cre A Science 8.0 programming competition</dd>
+                            </div>
+                            <div class="fact">
+                                <dt>Based in</dt>
+                                <dd>Yogyakarta, Indonesia</dd>
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <ol class="experience-list">
+                    <li>
+                        <article class="exp-entry">
+                            <h3>Cloud Computing Cohort</h3>
+                            <p class="exp-org">Bangkit Academy 2024, by Google, GoTo, and Traveloka</p>
+                            <ul>
+                                <li>Strengthened understanding of cloud services using Google Cloud Platform (GCP)</li>
+                                <li>Designed, deployed, and maintained backend servers on Google Cloud Run and Firestore</li>
+                                <li>Collaborated in a capstone project with responsibility for backend and cloud service integration</li>
+                            </ul>
+                            <ul class="tag-row"><li>GCP</li><li>Cloud Run</li><li>Firestore</li></ul>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="exp-entry">
+                            <h3>Laravel Programmer</h3>
+                            <p class="exp-org">Sensasi, Yayasan Obor Emas Indonesia</p>
+                            <ul>
+                                <li>Collaborated with a team to develop and maintain the Sensasi scholarship platform using Laravel</li>
+                                <li>Built frontend and backend features for the website, including student data management and scholarship application forms</li>
+                                <li>Contributed to the profiling website and admin dashboard, improving data submission accuracy by streamlining input validation</li>
+                            </ul>
+                            <ul class="tag-row"><li>Laravel</li><li>MySQL</li><li>PHP</li></ul>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="exp-entry">
+                            <h3>Backend Programmer</h3>
+                            <p class="exp-org">Restaurant System Project, Universitas Kristen Immanuel</p>
+                            <ul>
+                                <li>Developed a Django-based system with SQLite3, handling CRUD for menus and transactions plus role-based auth for 3 user types</li>
+                                <li>Built authentication, authorization, and error handling for Admin, Cashier, and Customer roles</li>
+                                <li>Implemented PDF reporting, reducing manual admin work by about 70% in simulations</li>
+                            </ul>
+                            <ul class="tag-row"><li>Django</li><li>SQLite3</li><li>Python</li></ul>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="exp-entry">
+                            <h3>Mentor</h3>
+                            <p class="exp-org">Programming Study Club, Universitas Kristen Immanuel</p>
+                            <ul>
+                                <li>Taught Python programming fundamentals to 30-plus students</li>
+                                <li>Contributed to improving the club's technical workshops and collaborative learning environment</li>
+                            </ul>
+                            <ul class="tag-row"><li>Python</li><li>Mentoring</li></ul>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="exp-entry">
+                            <h3>Programmer</h3>
+                            <p class="exp-org">Ukrim Dormitory Information System, Universitas Kristen Immanuel</p>
+                            <ul>
+                                <li>Developed a web-based dormitory information system using Django, managing CRUD for 75-plus student records and room assignments</li>
+                                <li>Implemented data seeding and PDF report generation, cutting administrative setup time by about 70% in testing</li>
+                                <li>Designed an intuitive UI/UX, improving staff navigation efficiency</li>
+                            </ul>
+                            <ul class="tag-row"><li>Django</li><li>PostgreSQL</li></ul>
+                        </article>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+
+                <!-- Flagship: worked product with a real screenshot -->
+                <article class="project-flagship">
+                    <div class="flagship-copy">
+                        <p class="project-kicker">Live product, 2026</p>
+                        <h3>Bible Typing Indonesia</h3>
+                        <p>
+                            Keyboard-first typing practice for the Indonesian AYT Bible.
+                            All 66 books and 31,102 verses ship inside the app, verified byte-for-byte
+                            against the published source, so every passage you type is the real text.
+                        </p>
+                        <ul class="flag-points">
+                            <li>Three modes: pick any verse, walk through a book, or resume where you stopped, with live gross and net WPM and accuracy</li>
+                            <li>Saved verses with search, per-passage progress, and a settings panel from caret style to key sounds generated with the Web Audio API</li>
+                            <li>No account and no server: progress lives entirely in your browser across a 31,102-verse dataset</li>
+                        </ul>
+                        <p class="tag-row"><span>React 19</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>Web Audio API</span><span>Vitest</span></p>
+                        <div class="project-links">
+                            <a class="btn btn-primary" href="https://bibletypeid.site" target="_blank" rel="noopener">Open bibletypeid.site</a>
+                            <a class="text-link" href="https://github.com/NatanaelEdward/bibletype" target="_blank" rel="noopener">View source on GitHub</a>
+                        </div>
+                    </div>
+                    <figure class="flagship-shot">
+                        <a href="https://bibletypeid.site" target="_blank" rel="noopener">
+                            <img src="images/bibletype.jpg" width="800" height="574" loading="lazy"
+                                 alt="Bible Typing Indonesia in use: Song of Songs 1:1 ready to type, with live WPM and accuracy counters">
+                        </a>
+                    </figure>
+                </article>
+
+                <!-- Selected work: the strongest projects get a full-width row each,
+                     alternating image sides, more type weight than the side entries
+                     (hierarchy reason: requested priority order) -->
+                <h3 class="archive-heading">Selected work</h3>
+                <div class="strong-rows">
+                    <article class="strong-row strong-row-alt">
+                        <figure class="strong-shot strong-shot-phone">
+                            <img src="images/herbaguide-1.jpg" width="422" height="901" loading="lazy" alt="HerbaGuide home screen with the plant scanning entry point">
+                        </figure>
+                        <div class="strong-body">
+                            <div class="row-head">
+                                <h4>HerbaGuide, herbal plant recognition</h4>
+                                <p class="row-meta">Bangkit capstone, 2024</p>
+                            </div>
+                            <p class="row-desc">
+                                Mobile app that identifies herbal plants from photos: snap a leaf and a
+                                FastAPI service names the species and returns its uses. I owned the backend
+                                and cloud layer, serving the ML model on Cloud Run with Firestore behind it,
+                                secure image storage for every upload, and an Express.js landing page on
+                                App Engine.
+                            </p>
+                            <p class="tag-row"><span>FastAPI</span><span>GCP</span><span>Cloud Run</span><span>Firestore</span><span>Express.js</span></p>
+                            <p class="row-links">
+                                <a class="text-link" href="https://github.com/HerbaGuideTeam" target="_blank" rel="noopener">Organization on GitHub</a>
+                                <button class="text-link as-button" type="button" data-project="herbaguide">Screenshots</button>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="strong-row">
+                        <figure class="strong-shot">
+                            <img src="images/dormitory-1.jpg" width="800" height="352" loading="lazy" alt="Dormitory system administrator data view">
+                        </figure>
+                        <div class="strong-body">
+                            <div class="row-head">
+                                <h4>Dormitory Information System</h4>
+                                <p class="row-meta">University project</p>
+                            </div>
+                            <p class="row-desc">
+                                Web-based dormitory management for 75-plus student records and room
+                                assignments, built with Django. Automated data seeding and PDF report
+                                generation cut administrative setup time by about 70% in testing.
+                            </p>
+                            <p class="tag-row"><span>Django</span><span>PostgreSQL</span><span>PDF generation</span></p>
+                            <p class="row-links">
+                                <a class="text-link" href="https://github.com/NatanaelEdward/aplikasi-pengelola-asrama-putri-ukrim" target="_blank" rel="noopener">Repository on GitHub</a>
+                                <button class="text-link as-button" type="button" data-project="dormitory">Screenshots</button>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="strong-row strong-row-alt">
+                        <figure class="strong-shot">
+                            <img src="images/sensasi-1.jpg" width="1920" height="1080" loading="lazy" alt="Sensasi scholarship platform admin page">
+                        </figure>
+                        <div class="strong-body">
+                            <div class="row-head">
+                                <h4>Sensasi Scholarship Platform</h4>
+                                <p class="row-meta">Client work, Yayasan Obor Emas Indonesia</p>
+                            </div>
+                            <p class="row-desc">
+                                Scholarship management system for Yayasan Obor Emas Indonesia, built
+                                with a team in Laravel: student data management, application forms, and
+                                an admin dashboard, with input validation tightened for submission
+                                accuracy.
+                            </p>
+                            <p class="tag-row"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></p>
+                            <p class="row-links">
+                                <button class="text-link as-button" type="button" data-project="sensasi">Screenshots</button>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Fun and side projects: lighter, condensed text rows -->
+                <h3 class="archive-heading">Fun and side projects</h3>
+                <div class="project-rows">
+                    <article class="project-row">
+                        <div class="row-head">
+                            <h3>TextExtract</h3>
+                            <p class="row-meta">Practice project, 2024</p>
+                        </div>
+                        <p class="row-desc">
+                            Image-to-text converter wired end to end: upload an image from the React
+                            frontend, and a FastAPI backend running Tesseract OCR returns the recognized
+                            text. Built as a hands-on look at how OCR services fit between client and API.
+                        </p>
+                        <p class="tag-row"><span>React</span><span>FastAPI</span><span>Tesseract</span></p>
+                        <p class="row-links">
+                            <a class="text-link" href="https://github.com/NatanaelEdward/textextract" target="_blank" rel="noopener">Repository on GitHub</a>
+                        </p>
+                    </article>
+
+                    <article class="project-row">
+                        <div class="row-head">
+                            <h3>Lies of P Randomizer, compatibility update</h3>
+                            <p class="row-meta">Game mod maintenance, 2026</p>
+                        </div>
+                        <p class="row-desc">
+                            Kept Fiend Busa's Enemy and Item Randomizer working on the current game build
+                            by rebuilding its helper DLL: hook sites are located with runtime signature
+                            scanning instead of hard-coded addresses, so the mod survives game updates.
+                            Each hook installs fail-open: if a byte pattern stops matching, the game runs
+                            unmodded for that feature.
+                        </p>
+                        <p class="tag-row"><span>C++</span><span>DLL hooking</span><span>Signature scanning</span></p>
+                        <p class="row-links">
+                            <a class="text-link" href="https://github.com/NatanaelEdward/Lop-randomizer" target="_blank" rel="noopener">Repository on GitHub</a>
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Earlier work: de-emphasized compact text rows, kept for completeness -->
+                <h3 class="archive-heading">Earlier work</h3>
+                <ol class="archive-list">
+                    <li>
+                        <article class="archive-item plain">
+                            <div class="archive-body">
+                                <div class="row-head">
+                                    <h4>Restaurant Management System</h4>
+                                    <p class="row-meta">University project</p>
+                                </div>
+                                <p class="row-desc">
+                                    Django system with role-based auth for Admin, Cashier, and Customer,
+                                    full CRUD for menus and transactions, and PDF reporting that reduced
+                                    manual admin work by about 70% in simulation.
+                                </p>
+                                <p class="tag-row"><span>Django</span><span>SQLite3</span><span>REST API</span></p>
+                                <p class="row-links">
+                                    <a class="text-link" href="https://github.com/NatanaelEdward/project-resto-ppl" target="_blank" rel="noopener">Repository on GitHub</a>
+                                    <button class="text-link as-button" type="button" data-project="restaurant">Screenshots</button>
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="archive-item plain">
+                            <div class="archive-body">
+                                <div class="row-head">
+                                    <h4>Hospital efficiency forecasting with LSTM</h4>
+                                    <p class="row-meta">Thesis project</p>
+                                </div>
+                                <p class="row-desc">
+                                    Multi-step and bidirectional LSTM models forecasting hospital efficiency
+                                    indicators (BOR, AVLOS, TOI, BTO, GDR, NDR), with full visualization of
+                                    prediction results.
+                                </p>
+                                <p class="tag-row"><span>Python</span><span>TensorFlow</span><span>LSTM</span><span>Matplotlib</span></p>
+                                <p class="row-links">
+                                    <button class="text-link as-button" type="button" data-project="hospital">Screenshots</button>
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skill-groups">
+                    <div class="skill-group">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li><i class="devicon-laravel-plain colored" aria-hidden="true"></i>Laravel</li>
+                            <li><i class="devicon-django-plain colored" aria-hidden="true"></i>Django</li>
+                            <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i>Node.js</li>
+                            <li><i class="devicon-express-original colored" aria-hidden="true"></i>Express</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li><i class="devicon-react-original colored" aria-hidden="true"></i>React</li>
+                            <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i>JavaScript</li>
+                            <li><i class="devicon-html5-plain colored" aria-hidden="true"></i>HTML5</li>
+                            <li><i class="devicon-css3-plain colored" aria-hidden="true"></i>CSS3</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li><i class="devicon-python-plain colored" aria-hidden="true"></i>Python</li>
+                            <li><i class="devicon-php-plain colored" aria-hidden="true"></i>PHP</li>
+                            <li><i class="devicon-java-plain colored" aria-hidden="true"></i>Java</li>
+                            <li><i class="devicon-typescript-plain colored" aria-hidden="true"></i>TypeScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Databases</h3>
+                        <ul>
+                            <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i>MySQL</li>
+                            <li><i class="devicon-postgresql-plain colored" aria-hidden="true"></i>PostgreSQL</li>
+                            <li><i class="devicon-firebase-plain colored" aria-hidden="true"></i>Firebase</li>
+                            <li><i class="devicon-sqlite-plain colored" aria-hidden="true"></i>SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Cloud and tooling</h3>
+                        <ul>
+                            <li><i class="devicon-googlecloud-plain colored" aria-hidden="true"></i>GCP</li>
+                            <li><i class="devicon-docker-plain colored" aria-hidden="true"></i>Docker</li>
+                            <li><i class="devicon-git-plain colored" aria-hidden="true"></i>Git</li>
+                            <li><i class="devicon-tailwindcss-plain colored" aria-hidden="true"></i>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Machine learning</h3>
+                        <ul>
+                            <li><i class="devicon-tensorflow-original colored" aria-hidden="true"></i>TensorFlow</li>
+                            <li><i class="devicon-numpy-original colored" aria-hidden="true"></i>NumPy</li>
+                            <li><i class="devicon-pandas-original colored" aria-hidden="true"></i>Pandas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="soft-skills">
+                    <h3>Working style</h3>
+                    <ul class="soft-skills-list">
+                        <li>Leadership</li>
+                        <li>Communication</li>
+                        <li>Team collaboration</li>
+                        <li>Adaptive</li>
+                        <li>Critical thinking</li>
+                        <li>Analytical</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-lede">The fastest way to reach me is email.</p>
+                <div class="contact-grid">
+                    <a class="contact-primary" href="mailto:natanaeledward22@gmail.com">
+                        <span class="contact-mail-label">Email</span>
+                        <span class="contact-mail-addr">natanaeledward22@gmail.com</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/natanaeledward" target="_blank" class="social-icon">
-                        <i class="devicon-linkedin-plain"></i>
-                    </a>
-                    <a href="mailto:natanaeledward22@gmail.com" class="social-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </a>
+                    <ul class="contact-list">
+                        <li>
+                            <a href="https://github.com/NatanaelEdward" target="_blank" rel="noopener">github.com/NatanaelEdward</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/natanaeledward" target="_blank" rel="noopener">linkedin.com/in/natanaeledward</a>
+                        </li>
+                        <li>
+                            <a href="tel:+6282253459940">+62 822 5345 9940</a>
+                        </li>
+                        <li>
+                            <span>Yogyakarta, Indonesia (GMT+7)</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="hero-image-container">
-                <div class="profile-image-wrapper">
-                    <div class="profile-image-border"></div>
-                    <div class="profile-image">
-                        <img src="images/profile.jpg" alt="Natanael Edward Agung" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22%3E%3Crect fill=%22%23112240%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%2364ffda%22%3ENA%3C/text%3E%3C/svg%3E'">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <footer class="site-footer">
         <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">02.</span> About Me
-            </h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="text-card">
-                        <p>Hello! I'm Natanael Edward Agung, a fresh graduate in <strong>Informatics</strong> from Immanuel Christian University with a GPA of <strong>3.72/4.00</strong>.</p>
-                        
-                        <p>My journey in tech started with a deep curiosity about how systems work behind the scenes, which led me to specialize in <strong>backend development</strong> and <strong>cloud computing</strong>.</p>
-                        
-                        <p>I had the amazing opportunity to participate in <strong>Bangkit Academy 2024</strong> by Google, GoTo, and Traveloka, where I strengthened my cloud computing skills using Google Cloud Platform.</p>
-                        
-                        <p>Beyond coding, I've been a <strong>Programming Study Club Mentor</strong>, teaching Python to 30+ students, and served as an <strong>Assistant Lecturer</strong> for English Informatics.</p>
-                        
-                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or helping fellow developers grow their skills.</p>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">3.72</div>
-                        <div class="stat-label">GPA / 4.00</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card highlight-stat">
-                        <div class="stat-icon">🏆</div>
-                        <div class="stat-label">1st Place<br>Programming Competition<br>Cre A Science 8.0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">03.</span> Experience
-            </h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Cloud Computing Cohort</h3>
-                        <h4>Bangkit Academy 2024 By Google, GoTo, Traveloka</h4>
-                        <ul>
-                            <li>Strengthened understanding of cloud services using Google Cloud Platform (GCP)</li>
-                            <li>Designed, deployed, and maintained backend servers on Google Cloud Run and Firestore</li>
-                            <li>Collaborated in a Capstone Project with responsibility for backend and cloud service integration</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>GCP</span>
-                            <span>Cloud Run</span>
-                            <span>Firestore</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Laravel Programmer</h3>
-                        <h4>Sensasi - Yayasan Obor Emas Indonesia</h4>
-                        <ul>
-                            <li>Collaborated with a team to develop and maintain the Sensasi scholarship platform using Laravel</li>
-                            <li>Built frontend and backend features for the website, including student data management and scholarship application forms</li>
-                            <li>Contributed to the profiling website and admin dashboard, improving data submission accuracy by streamlining input validation</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Laravel</span>
-                            <span>MySQL</span>
-                            <span>PHP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Backend Programmer</h3>
-                        <h4>Restaurant System Project - Universitas Kristen Immanuel</h4>
-                        <ul>
-                            <li>Developed a Django-based system with SQLite3, handling CRUD for menus/transactions and role-based auth for 3 user types</li>
-                            <li>Built authentication, authorization, and error handling for Admin, Cashier, and Customer roles</li>
-                            <li>Improved efficiency by implementing PDF reporting, reducing manual admin work by ~70% in simulations</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Django</span>
-                            <span>SQLite3</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Mentor</h3>
-                        <h4>Programming Study Club - Universitas Kristen Immanuel</h4>
-                        <ul>
-                            <li>Taught Python programming fundamentals to 30+ students</li>
-                            <li>Contributed to improving the club's technical workshops and collaborative learning environment</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>Teaching</span>
-                            <span>Mentoring</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Programmer</h3>
-                        <h4>Ukrim Dormitory Information System - Universitas Kristen Immanuel</h4>
-                        <ul>
-                            <li>Developed a web-based Ukrim Dormitory Information System using Django, managing CRUD for 75+ student records and room assignments</li>
-                            <li>Implemented data seeding and PDF report generation, cutting administrative setup time by ~70% in testing</li>
-                            <li>Designed an intuitive UI/UX, improving staff navigation efficiency</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Django</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">04.</span> Featured Projects
-            </h2>
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-image-container">
-                        <img src="images/herbaguide.jpg" alt="HerbaGuide Project" class="project-img">
-                        <div class="project-overlay">
-                            <div class="project-icon-large">
-                                <svg viewBox="0 0 24 24" width="50" height="50">
-                                    <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6L16,12H13V18H11V12H8L12,6Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <svg viewBox="0 0 24 24" width="40" height="40">
-                                    <path fill="currentColor" d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M13,3.5L18.5,9H13V3.5M8,12V14H16V12H8M8,16V18H13V16H8Z"/>
-                                </svg>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/HerbaGuideTeam" target="_blank">
-                                    <i class="devicon-github-original"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <h3>HerbaGuide - Herbal Plant Recognition App</h3>
-                        <p>Mobile application for identifying herbal plants through image recognition. Built scalable backend API with FastAPI deployed on GCP Cloud Run, integrated ML model with Firebase Firestore, and created landing page with Express.js on App Engine. Managed authentication, prediction endpoints, and secure image storage on Cloud Storage.</p>
-                        <div class="project-tech">
-                            <span>FastAPI</span>
-                            <span>GCP</span>
-                            <span>Cloud Run</span>
-                            <span>Firestore</span>
-                            <span>Express.js</span>
-                            <span>App Engine</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-type">Bangkit Capstone Project - Cloud Computing Role</div>
-                            <button class="btn btn-screenshots" onclick="openModal('herbaguide')">
-                                <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-                                    <path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3M15.96,10.29L13.21,13.83L11.25,11.47L8.5,15H19.5L15.96,10.29Z"/>
-                                </svg>
-                                Screenshots
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="images/hospital-lstm.jpg" alt="Hospital LSTM Project" class="project-img">
-                        <div class="project-overlay">
-                            <div class="project-icon-large">
-                                <svg viewBox="0 0 24 24" width="50" height="50">
-                                    <path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <svg viewBox="0 0 24 24" width="40" height="40">
-                                    <path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3>Hospital Efficiency Forecasting using LSTM</h3>
-                        <p>Developed LSTM-based forecasting models to analyze hospital efficiency indicators (BOR, AVLOS, TOI, BTO, GDR, NDR). Implemented multi-step and bidirectional LSTM models achieving high prediction accuracy with comprehensive visualizations.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>LSTM</span>
-                            <span>Matplotlib</span>
-                            <span>Seaborn</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-type">Thesis Project</div>
-                            <button class="btn btn-screenshots" onclick="openModal('hospital')">
-                                <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-                                    <path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3M15.96,10.29L13.21,13.83L11.25,11.47L8.5,15H19.5L15.96,10.29Z"/>
-                                </svg>
-                                Screenshots
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="images/sensasi.jpg" alt="Sensasi Scholarship Platform" class="project-img">
-                        <div class="project-overlay">
-                            <div class="project-icon-large">
-                                <svg viewBox="0 0 24 24" width="50" height="50">
-                                    <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <svg viewBox="0 0 24 24" width="40" height="40">
-                                    <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3>Sensasi Scholarship Platform</h3>
-                        <p>Scholarship management system for Yayasan Obor Emas Indonesia. Built comprehensive features for student data management, application forms, and admin dashboard with improved validation accuracy.</p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-type">Scholarship Project</div>
-                            <button class="btn btn-screenshots" onclick="openModal('sensasi')">
-                                <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-                                    <path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3M15.96,10.29L13.21,13.83L11.25,11.47L8.5,15H19.5L15.96,10.29Z"/>
-                                </svg>
-                                Screenshots
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="images/restaurant.jpg" alt="Restaurant Management System" class="project-img">
-                        <div class="project-overlay">
-                            <div class="project-icon-large">
-                                <svg viewBox="0 0 24 24" width="50" height="50">
-                                    <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <svg viewBox="0 0 24 24" width="40" height="40">
-                                    <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3>Restaurant Management System</h3>
-                        <p>Django-based restaurant system with role-based authentication for Admin, Cashier, and Customer. Features comprehensive CRUD operations, PDF reporting that reduced manual work by 70%.</p>
-                        <div class="project-tech">
-                            <span>Django</span>
-                            <span>Python</span>
-                            <span>SQLite3</span>
-                            <span>REST API</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-type">University Project</div>
-                            <button class="btn btn-screenshots" onclick="openModal('restaurant')">
-                                <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-                                    <path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3M15.96,10.29L13.21,13.83L11.25,11.47L8.5,15H19.5L15.96,10.29Z"/>
-                                </svg>
-                                Screenshots
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="images/dormitory.jpg" alt="Dormitory Information System" class="project-img">
-                        <div class="project-overlay">
-                            <div class="project-icon-large">
-                                <svg viewBox="0 0 24 24" width="50" height="50">
-                                    <path fill="currentColor" d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <svg viewBox="0 0 24 24" width="40" height="40">
-                                    <path fill="currentColor" d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3>Dormitory Information System</h3>
-                        <p>Web-based dormitory management system for 75+ student records and room assignments. Implemented automated data seeding and PDF reporting, reducing setup time by 70%.</p>
-                        <div class="project-tech">
-                            <span>Django</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                            <span>PDF Generation</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-type">University Project</div>
-                            <button class="btn btn-screenshots" onclick="openModal('dormitory')">
-                                <svg viewBox="0 0 24 24" width="16" height="16" style="fill: currentColor;">
-                                    <path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3M15.96,10.29L13.21,13.83L11.25,11.47L8.5,15H19.5L15.96,10.29Z"/>
-                                    </svg>
-                                Screenshots
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">05.</span> Skills & Technologies
-            </h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-laravel-plain colored"></i>
-                            <span>Laravel</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-django-plain colored"></i>
-                            <span>Django</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-nodejs-plain colored"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-express-original colored"></i>
-                            <span>Express</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-react-original colored"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-php-plain colored"></i>
-                            <span>PHP</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-java-plain colored"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-firebase-plain colored"></i>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-sqlite-plain colored"></i>
-                            <span>SQLite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-googlecloud-plain colored"></i>
-                            <span>GCP</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-tensorflow-original colored"></i>
-                            <span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>LSTM</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-numpy-original colored"></i>
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-pandas-original colored"></i>
-                            <span>Pandas</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="soft-skills">
-                <h3>Soft Skills</h3>
-                <div class="soft-skills-list">
-                    <span class="soft-skill">Leadership</span>
-                    <span class="soft-skill">Communication</span>
-                    <span class="soft-skill">Team Collaboration</span>
-                    <span class="soft-skill">Adaptive</span>
-                    <span class="soft-skill">Critical Thinking</span>
-                    <span class="soft-skill">Analytical Skills</span>
-                    <span class="soft-skill">Work Under Pressure</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">06.</span> Get In Touch
-            </h2>
-            <div class="contact-wrapper">
-                <div class="contact-info-cards">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" width="30" height="30">
-                                <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </div>
-                        <h4>Email</h4>
-                        <a href="mailto:natanaeledward22@gmail.com">natanaeledward22@gmail.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" width="30" height="30">
-                                <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                            </svg>
-                        </div>
-                        <h4>Phone</h4>
-                        <a href="tel:+6282253459940">+62 822 5345 9940</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" width="30" height="30">
-                                <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                            </svg>
-                        </div>
-                        <h4>Location</h4>
-                        <p>Yogyakarta, Indonesia</p>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <h3>Send me a message</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span>Send Message</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>Designed & Built by Natanael Edward Agung</p>
-            <p class="footer-subtitle">© 2025 All rights reserved.</p>
+            <p>Designed and built by Natanael Edward Agung.</p>
+            <p>&copy; 2026</p>
         </div>
     </footer>
 
-    <!-- Screenshot Modal -->
-    <div id="screenshotModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-nav modal-prev" onclick="changeSlide(-1)">&#10094;</div>
-            <img id="modalImage" class="modal-image" src="" alt="Project Screenshot">
-            <div class="modal-nav modal-next" onclick="changeSlide(1)">&#10095;</div>
-            <p id="modalCaption" class="modal-caption"></p>
-            <div id="carouselIndicators" class="carousel-indicators"></div>
+    <!-- Project screenshots dialog -->
+    <div id="screenshot-modal" class="modal" role="dialog" aria-modal="true" aria-label="Project screenshots" hidden>
+        <div class="modal-box">
+            <button class="modal-close" id="modal-close" type="button" aria-label="Close screenshots">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.4 7.4 17 6l-5 5-5-5-1.4 1.4 5 5-5 5L7 18.8l5-5 5 5 1.4-1.4-5-5 5-5z"/></svg>
+            </button>
+            <div class="modal-stage">
+                <button class="modal-nav modal-prev" id="modal-prev" type="button" aria-label="Previous screenshot">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6 4.6-4.6z"/></svg>
+                </button>
+                <img id="modal-image" src="" alt="">
+                <button class="modal-nav modal-next" id="modal-next" type="button" aria-label="Next screenshot">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M10 6 8.6 7.4l4.6 4.6-4.6 4.6L10 18l6-6-6-6z"/></svg>
+                </button>
+            </div>
+            <p id="modal-caption" class="modal-caption"></p>
+            <div id="modal-dots" class="modal-dots"></div>
         </div>
     </div>
 
